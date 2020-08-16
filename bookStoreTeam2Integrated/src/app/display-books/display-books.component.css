@@ -1,0 +1,180 @@
+
+header
+{
+    background-color:#313a5a ;
+    text-align: left;
+    padding:0px 0px 1px 0px;
+    
+
+}
+header img
+{
+    width:300px;
+    padding-bottom: 5px;
+}
+header ul
+{
+    float: right;
+    list-style: none;
+    /* margin-bottom: 5px; */
+    padding-top: 10px;
+
+}
+header li
+{
+    display: inline;
+    margin-right:5px ;
+}
+header a
+{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+}
+header span{
+    color: white;
+    float: right;
+    padding-right: 2%;
+}
+header a:hover
+{
+    background-color:grey;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+main
+{
+    font-family: 'Lato',sans-serif;
+    padding: 50px;
+    height: 800px;
+    
+}
+footer{
+    background-color: #313a5a;
+    text-align: center;
+    font-family: 'Lato',sans-serif;
+    color:white;
+    padding: 5px 0px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+#btn
+{
+    float: right;
+}
+
+#submit{
+    background-color: #313a5a;
+    color: white;
+    border-radius: 10%;
+    padding:1%; 
+    
+}
+
+#formData{
+    background-color:rgb(176, 188, 199);
+    width: 90%;
+    height: 90%;
+    
+}
+b{
+    font-size: 120%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+header
+{
+    background-color:#313a5a ;
+    text-align: left;
+    padding:0px 0px 1px 0px;
+    
+
+}
+header img
+{
+    width:300px;
+    padding-bottom: 5px;
+}
+header ul
+{
+    float: right;
+    list-style: none;
+    /* margin-bottom: 5px; */
+    padding-top: 10px;
+
+}
+header li
+{
+    display: inline;
+    margin-right:5px ;
+}
+header a
+{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding: 10px;
+}
+header span{
+    color: white;
+    float: right;
+    padding-right: 2%;
+}
+header a:hover
+{
+    background-color:grey;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+main
+{
+    font-family: 'Lato',sans-serif;
+    padding: 50px;
+    height: 800px;
+    
+}
+footer{
+    background-color: #313a5a;
+    text-align: center;
+    font-family: 'Lato',sans-serif;
+    color:white;
+    padding: 5px 0px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+#btn
+{
+    float: right;
+}
+
+#submit{
+    background-color: #313a5a;
+    color: white;
+    border-radius: 10%;
+    padding:1%; 
+    
+}
+
+#formData{
+    background-color:rgb(176, 188, 199);
+    width: 90%;
+    height: 90%;
+    
+}
+b{
+    font-size: 120%;
+}

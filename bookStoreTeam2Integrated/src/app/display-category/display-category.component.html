@@ -1,0 +1,27 @@
+
+
+<div class="row justify-content-left " style="padding:10px;">
+  <span class="btn btn-dark"  routerLink="/createCategory" role="button">Create New Category</span>     
+</div>
+
+<div>
+  <table class="table table-dark">
+    <tr>
+      <th><label>Category Id</label></th>
+      <th><label>Category Name</label> </th>
+      <th><label>Actions</label> </th>
+    </tr>
+
+    <tr class="categoryTable" *ngFor="let i of category;">
+      <th>{{i.categoryId }}</th>
+      <th>{{i.categoryName | titlecase }}</th>    
+      <td>
+        <button class="btn btn-success" routerLink="/updateCategory/{{i.categoryId}}" >Update</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" routerLink="/deleteCategory/{{i.categoryId}}">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,37 @@
+
+  <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto  form p-3 jumbotron">
+    <h2 class="text-center">Update Category</h2>
+    <form  ngNativeValidate name="UpdateCategory" #UpdateCategory="ngForm" (ngSubmit)=updateCategory(UpdateCategory)>
+      <div>
+        <b>Category Id :</b>
+            <input  class="form-control border border-dark"  [ngModelOptions]="{standalone: true}" name="category.categoryId" type="text" [(ngModel)]="category.categoryId">
+    </div>
+
+      <div>
+            <b>Category Name :</b>
+                <input  class="form-control border border-dark"  [ngModelOptions]="{standalone: true}" name="category.categoryName" type="text" [(ngModel)]="category.categoryName" #Name="ngModel"  autofocus required maxlength="10" minlength="5">
+                <div *ngIf="Name.invalid && (Name.dirty || Name.touched)">
+                  <div *ngIf="Name.errors.required" style="color: red;">Please Enter a category Name</div>
+                  <div *ngIf="Name.errors.minlength" style="color: red;">Category should be minimum 5 characters</div>
+                  <div *ngIf="Name.errors.maxlength" style="color: red;">Category should be maximum 30 characters</div>
+                </div>
+        </div>
+        <br>
+        <div class="text-center">
+          <button [disabled]="!CreateCategory.valid" type="submit" id="submit" class="btn btn-primary">Create category</button>
+          <span class="btn btn-light"  routerLink="/displayCategory" role="button">Back</span>   
+        </div>
+        </form>   
+  </div>
+  
+  <div *ngIf="showSuccessMessage" class="text-center">
+    <h2>{{successMessage}}</h2>
+   </div>
+  
+   <div *ngIf="showErorrMessage" class="text-center">
+    <h2>{{errorMessage}}</h2>
+   </div>
+
+
+  
+  

@@ -1,0 +1,22 @@
+<header *ngIf="loggedIn">
+  <img src="../assets/BookstoreAdminLogo.png" alt="logo">
+<ul>
+  <li><a routerLink="/error">Users</a></li>
+  <li><a routerLink="/displayCategory">Categories</a></li>
+  <li><a routerLink="/displayBooks">Books</a></li>
+  <li><a routerLink="/error">Customers</a></li>
+  <li><a routerLink="/error">Reviews</a></li>
+  <li><a routerLink="/error">Orders</a></li>
+  <button class="btn btn-light" (click)="logout()">Logout</button>
+</ul>
+</header>
+
+<body>    
+
+  
+  <main>
+      <router-outlet></router-outlet>
+  </main>
+  
+</body>
+

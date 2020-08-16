@@ -1,0 +1,35 @@
+<div id="formData" class="col-xl-6 col-lg-6 col-md-5 col-sm-5 mx-auto  form p-3 jumbotron">
+  <u> <h2 class="text-center" >Admin Login</h2></u>
+  <div class="alert alert-danger" *ngIf="checkError">
+    {{errorMessage}}
+ </div>
+ <!-- <div class="alert alert-success" *ngIf="checkInfo">
+   <strong>SUCCESS!</strong> Succesfully Logged In
+ </div> -->
+  <form  name="formdata" #formdata="ngForm" novalidate (ngSubmit)="onSubmit(formdata)">
+   <div>
+       <b> *Email</b>
+       <input type="email" placeholder="Enter email" id="id" name="email"  [(ngModel)]="email" #emailId="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control border border-dark" >
+        <div *ngIf="emailId.invalid && emailId.touched" class="alert alert-danger">
+          <span *ngIf="emailId.errors.required">*Email is Mandatory</span>
+          <span *ngIf="emailId.errors.pattern">*Please Enter Valid Email</span>
+          </div>
+      </div>
+
+      <div><b>*Password</b>
+       <input type="password" placeholder="Enter password" id="password" name="password"   [(ngModel)]="password" #pass="ngModel" required pattern =""  class="form-control border border-dark " >
+       <div *ngIf="pass.invalid && pass.touched" class="alert alert-danger">
+         <span *ngIf="pass.errors.required">*Password is Mandatory</span>
+         <span *ngIf="pass.errors.pattern">*Password contain one number,one character and one special </span>
+       
+       </div>
+     </div>
+     <br>
+     <div>
+       <input type="submit" value="Submit" id="submit" [disabled]="!formdata.valid">
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <button  routerLink="/"  class="btn btn-light">Cancel </button>
+     </div>
+</form>
+
+</div>

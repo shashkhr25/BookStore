@@ -1,0 +1,43 @@
+
+
+<div class="row justify-content-left " style="padding: 10px;">
+  
+  <span class="btn btn-dark"  routerLink="/createBook" role="button">Add new book</span>     
+
+</div>
+<div class="div-table" >
+  <table class="table table-dark">
+  <thead> 
+    <tr>
+   <th  style="height: 40px; width: 100px;" >Index</th>
+   <th>ID</th>
+   <th>Image</th>
+   <th>Title</th>
+   <th>Author</th>
+   <th>Category</th>
+   <th>Price</th>
+   <th >Last Updated</th>
+   <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of books let m=index">  
+     <td>{{(m+1)}}</td>
+     <td>{{i.bookId}}</td>
+     <td><img src="assets/{{i.bookId}}.jpg" height="50" width="55"/></td>
+    <td>{{i.title}}</td>
+    <td>{{i.author}}</td>
+    <td>{{i.category.categoryName}} </td>
+    <td>{{i.price}}</td>
+    <td>{{i.lastUpdateTime | date}}</td>
+    <td>
+      <button class="btn btn-success" routerLink="/updateBook/{{i.bookId}}">Update</button>
+      <button  class="btn btn-danger" routerLink="/deleteBook/{{i.bookId}}">Delete</button>
+    </td>
+      
+      
+        
+</tbody>  
+  
+</table> 
+  </div>

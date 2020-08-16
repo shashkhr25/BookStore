@@ -1,0 +1,24 @@
+
+
+<div class="row justify-content-left " style="padding: unset;">
+  <span class="btn btn-dark" style="width: 10%;" routerLink="/displayBooks" role="button">Back</span>     
+</div>
+
+<main>
+  <div class="modal" *ngIf=showModal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete Book</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete the Book?</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" (click)="deleteBook()">Delete</button>
+          <button class="btn btn-default" (click)="closeDialog()">Close</button>
+        </div>
+      </div>
+    </div>
+</div>  
+</main>

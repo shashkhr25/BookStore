@@ -1,0 +1,85 @@
+
+<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto  form p-3 jumbotron">
+      <h2 class="text-center">Add New Book</h2>
+      <form name="formdata" ngNativeValidate (ngSubmit)="createBook(Formdata)" #Formdata="ngForm">
+          <div>
+              <b>Book Title :</b>
+                  <input type="text" class="form-control border border-dark" [(ngModel)]="book.title" [ngModelOptions]="{standalone: true}" #Title=ngModel  autofocus required maxlength="128" minlength="10">
+                  <div *ngIf="Title.invalid && Title.touched" class="alert alert-danger">
+                      <span *ngIf="Title.errors.required">*Title is Mandatory</span>
+                      <span *ngIf="Title.errors.minlength" style="color: red;">Book Title should be minimum 10 characters</span>
+                      <span *ngIf="Title.errors.maxlength" style="color: red;">Book Title should be maximum 30 characters</span>    
+                  </div>
+          </div>
+
+          <div>
+            <b>Book Author :</b>
+                <input type="text" class="form-control border border-dark" [(ngModel)]="book.author" [ngModelOptions]="{standalone: true}" #Author=ngModel required autofocus utofocus required maxlength="65" minlength="5">
+                <div *ngIf="Author.invalid && Author.touched" class="alert alert-danger">
+                    <span *ngIf="Author.errors.required">*Author is Mandatory</span>
+                    <span *ngIf="Author.errors.minlength" style="color: red;">Book Author should be minimum 5 characters</span>
+                    <span *ngIf="Author.errors.maxlength" style="color: red;">Book Author should be maximum 65 characters</span>
+                </div>
+        </div>
+
+        <div>
+          <b>Book Price :</b>
+              <input type="text" class="form-control border border-dark" [(ngModel)]="book.price" [ngModelOptions]="{standalone: true}" #Price=ngModel required >
+              <div *ngIf="Price.invalid && Price.touched" class="alert alert-danger">
+                  <span *ngIf="Price.errors.required">*Price is Mandatory</span>
+                  </div>
+      </div>
+
+      <div>
+        <b>Book Description :</b>
+            <input type="text" class="form-control border border-dark" [(ngModel)]="book.description" [ngModelOptions]="{standalone: true}" #Description=ngModel required autofocus maxlength="2000" minlength="200">
+            <div *ngIf="Description.invalid && Description.touched" class="alert alert-danger">
+                <span *ngIf="Description.errors.required">*Description is Mandatory</span>
+                <span *ngIf="Description.errors.minlength" style="color: red;">Description should be minimum 200 characters</span>
+              <span *ngIf="Description.errors.maxlength" style="color: red;">Description should be maximum 2000 characters</span>
+            </div>
+    </div>
+
+    <div>
+      <b>ISBN Number :</b>
+          <input type="text" class="form-control border border-dark" [(ngModel)]="book.isbnNumber" [ngModelOptions]="{standalone: true}" #Isbn=ngModel required required maxlength="15" minlength="10">
+          <div *ngIf="Isbn.invalid && Isbn.touched" class="alert alert-danger">
+              <span *ngIf="Isbn.errors.required">*Isbn is Mandatory</span>
+              <span *ngIf="Isbn.errors.minlength" style="color: red;">ISBN Number should be minimum 10 characters</span>
+              <span *ngIf="Isbn.errors.maxlength" style="color: red;">ISBN Number should be maximum 15 characters</span>
+          </div>
+  </div>
+
+  <div>
+    <b>publish date :</b>
+        <input type="date" class="form-control border border-dark" [(ngModel)]="book.publishDate" [ngModelOptions]="{standalone: true}" #Date=ngModel required>
+        <div *ngIf="Date.invalid && Date.touched" class="alert alert-danger">
+            <span *ngIf="Date.errors.required">*date is Mandatory</span>
+        </div>
+</div>
+
+<div>
+  <b>Category :</b>
+  <select name="book.categoryId" type="text" [(ngModel)]="book.categoryId" #Category="ngModel" class="form-control" >
+    <option *ngFor="let cat of category" value="{{cat.categoryId}}">{{cat.categoryName}}</option>
+    </select>
+      <div *ngIf="Category.invalid && Category.touched" class="alert alert-danger">
+          <span *ngIf="Category.errors.required">*Category is Mandatory</span>
+      </div>
+</div>
+          <br>
+              <div class="text-center">
+                <button [disabled]="!Formdata.valid" type="submit" id="submit" class="btn btn-primary">Create book</button>
+                <span class="btn btn-light"  routerLink="/displayBooks" role="button">Back</span>   
+              </div>
+      </form>
+  </div>
+
+  <div *ngIf="showMessage" class="text-center">
+    <h2>{{message}}</h2>
+   </div>
+  
+   <div *ngIf="showError" class="text-center">
+    <h2>{{errorMessage}}</h2>
+   </div>
+
