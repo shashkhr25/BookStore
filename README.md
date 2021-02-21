@@ -8,7 +8,7 @@ Functionalities- Manage Book [Add, Display, Update]
 ![Alt text](https://github.com/shashkhr25/BookStore/blob/master/screenshots/login.png)
 
 ## Manage Category Page
-![Alt text[(https://github.com/shashkhr25/BookStore/blob/master/screenshots/category.png)
+![Alt text](https://github.com/shashkhr25/BookStore/blob/master/screenshots/category.png)
 
 ## Add Category Form
 ![Alt text](https://github.com/shashkhr25/BookStore/blob/master/screenshots/addCategory.png)
